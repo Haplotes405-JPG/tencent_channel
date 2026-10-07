@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# 宸ュ叿閾剧紦瀛橈紙mpdt check 浼氱敓鎴愶級
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# 鎻掍欢杩愯鏃朵骇鐗?/ 鏈湴閰嶇疆锛堢粷涓嶅叆搴擄級
+config/
+data/
+logs/
+*.log
+login_token.json
+tencent_channel_login_token.json
+
+# 缂栬緫鍣?/ 绯荤粺
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 构建产物（.mfp 只随 GitHub Release 分发）
+dist/
