@@ -1,0 +1,164 @@
+{
+    "name": "tencent_channel",
+    "display_name": "腾讯频道（QQ 频道）",
+    "version": "1.1.0",
+    "description": "通过 tencent-channel-cli 接入腾讯频道（QQ 频道）：轮询互动通知、AI 自动回复评论/私信，并提供发帖与频道查询工具",
+    "author": "小小辉",
+    "license": "GPL-3.0",
+    "dependencies": {
+        "plugins": [],
+        "components": []
+    },
+    "categories": [
+        "chat"
+    ],
+    "tags": [
+        "tencent",
+        "qq",
+        "channel",
+        "guild",
+        "adapter",
+        "cli"
+    ],
+    "include": [
+        {
+            "component_type": "config",
+            "component_name": "config",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "adapter",
+            "component_name": "tencent_channel_adapter",
+            "dependencies": [
+                "tencent_channel:service:channel_cli"
+            ],
+            "enabled": true
+        },
+        {
+            "component_type": "service",
+            "component_name": "channel_cli",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "tool",
+            "component_name": "channel_notices",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "tool",
+            "component_name": "channel_search_feeds",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "tool",
+            "component_name": "channel_feed_detail",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "tool",
+            "component_name": "channel_guild_info",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "tool",
+            "component_name": "channel_members",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "tool",
+            "component_name": "channel_guilds",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "tool",
+            "component_name": "channel_sections",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "tool",
+            "component_name": "channel_read",
+            "dependencies": [
+                "tencent_channel:service:channel_cli"
+            ],
+            "enabled": true
+        },
+        {
+            "component_type": "action",
+            "component_name": "channel_publish_feed",
+            "dependencies": [
+                "tencent_channel:service:channel_cli"
+            ],
+            "enabled": true
+        },
+        {
+            "component_type": "action",
+            "component_name": "channel_comment_feed",
+            "dependencies": [
+                "tencent_channel:service:channel_cli"
+            ],
+            "enabled": true
+        },
+        {
+            "component_type": "action",
+            "component_name": "channel_reply_comment",
+            "dependencies": [
+                "tencent_channel:service:channel_cli"
+            ],
+            "enabled": true
+        },
+        {
+            "component_type": "action",
+            "component_name": "channel_like",
+            "dependencies": [
+                "tencent_channel:service:channel_cli"
+            ],
+            "enabled": true
+        },
+        {
+            "component_type": "action",
+            "component_name": "channel_send_dm",
+            "dependencies": [
+                "tencent_channel:service:channel_cli"
+            ],
+            "enabled": true
+        },
+        {
+            "component_type": "action",
+            "component_name": "channel_write",
+            "dependencies": [
+                "tencent_channel:service:channel_cli"
+            ],
+            "enabled": true
+        },
+        {
+            "component_type": "event_handler",
+            "component_name": "shutdown_logout",
+            "dependencies": [],
+            "enabled": true
+        },
+        {
+            "component_type": "event_handler",
+            "component_name": "capability_gate",
+            "dependencies": [],
+            "enabled": true
+        }
+    ],
+    "entry_point": "plugin.py",
+    "api_version": {
+        "service_api": "1.0.0"
+    },
+    "min_core_version": "1.2.0-rc.1",
+    "python_dependencies": [
+        "Pillow>=10.0"
+    ],
+    "dependencies_required": false
+}
